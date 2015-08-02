@@ -1,0 +1,8 @@
+<h1>Enter a message</h1>
+
+<form action="/posts" method="post">
+    <input type="text" name="post[name]" placeholder="Enter your name here">
+    <textarea name="post[text]" placeholder="Type your message here"></textarea>
+    <button> Add Post </button>
+    <%= token_tag form_authenticity_token %>
+</form>

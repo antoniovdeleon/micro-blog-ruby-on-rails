@@ -1,0 +1,10 @@
+<h1>Messages</h1>
+
+<% @posts.each do |post| %>
+
+    <div>
+        Name: <%= post.name %> <br>
+        Message: <%= post.text %> <br>
+    </div>
+
+<% end %>
