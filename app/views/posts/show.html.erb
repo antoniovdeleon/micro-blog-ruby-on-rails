@@ -1,5 +1,14 @@
-<div>
-  Name: <%= @post.name %><br>
-  Message: <%= @post.text %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+    	<h1>Micro-Blog Post <%= @post.id %></h1>
+    	<br>
+    </div>
+			<div class="col-md-8 col-md-offset-2">
+       <div class="well">
+		    Name: <%= @post.subject %> <br>
+		    Message: <%= @post.text %> <br>
+			 </div>
+			</div>
+  </div>
 </div>
-<br>

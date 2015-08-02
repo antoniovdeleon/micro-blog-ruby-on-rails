@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
 	def create
 		# new post data from form
-		post_params = params.require(:post).permit(:name, :text)
+		post_params = params.require(:post).permit(:subject, :text)
 		# create new post in db
 		post = Post.create(post_params)
 		# redirect to posts' show page
@@ -44,13 +44,13 @@ class PostsController < ApplicationController
   	# set id from url params
   	post_id = params[:id]
   	# find post in db by its id
-  	post = Post.find(post_id)
+  	@post = Post.find(post_id)
   	# updated post data from form 
-  	post_params = params.require(:post).permit(:name, :text)
+  	post_params = params.require(:post).permit(:subject, :text)
   	# update the post in db
-  	post.update_attributes(post_params)
+  	@post.update_attributes(post_params)
   	# redirect to post's show page
-  	redirect_to "/posts/#{post.id}"
+  	redirect_to "/posts/#{@post.id}"
   end
 
 end

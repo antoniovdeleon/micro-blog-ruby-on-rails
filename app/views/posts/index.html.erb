@@ -1,10 +1,17 @@
-<h1>Messages</h1>
-
-<% @posts.each do |post| %>
-
-    <div>
-        Name: <%= post.name %> <br>
-        Message: <%= post.text %> <br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+    	<h1>Micro-Blog Posts</h1>
+    	<br>
     </div>
+		<% @posts.each do |post| %>
+			<div class="col-md-8 col-md-offset-2">
+       <div class="well">
+		    Name: <%= post.subject %> <br>
+		    Message: <%= post.text %> <br>
+			 </div>
+			</div>
+		<% end %>
+  </div>
+</div>
 
-<% end %>
