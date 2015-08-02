@@ -44,13 +44,15 @@ class PostsController < ApplicationController
   	# set id from url params
   	post_id = params[:id]
   	# find post in db by its id
-  	@post = Post.find(post_id)
+  	post = Post.find(post_id)
   	# updated post data from form 
   	post_params = params.require(:post).permit(:subject, :text)
   	# update the post in db
-  	@post.update_attributes(post_params)
+  	post.update_attributes(post_params)
   	# redirect to post's show page
-  	redirect_to "/posts/#{@post.id}"
+  	redirect_to "/posts/#{post.id}"
   end
+
+
 
 end
