@@ -28,5 +28,24 @@
 	</form>
 </div>
 
+<!-- bootstrap ruby style  -->
+<div class="container">
+ <%= form_for @post, :html => {:class => "form-horizontal center"} do |f| %>
+	<div class="form-group">
+		<%= f.label :subject, "Subject:", class: "col-sm-2 control-label" %>
+		<div class="col-sm-8">
+	    <%= f.text_field :subject, class: "form-control" %>
+	  </div>
+	</div>
+	<div class="form-group">
+	  <%= f.label :text, "Blog Post:", class: "col-sm-2 control-label" %>
+	  <div class="col-sm-8">
+	    <%= f.text_area :text, class: "form-control" %>
+	  </div>
+	</div>
+			<%= f.submit "Submit Post", class: "btn btn-default btn-primary" %>  
+ 		<% end %>
+	</div>
+</div>
 
 

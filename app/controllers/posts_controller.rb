@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 	end
 
 	def new #this method renders the new.html.erb page
+		@post = Post.new
 		render :new
 	end
 
@@ -52,6 +53,14 @@ class PostsController < ApplicationController
   	# redirect to post's show page
   	redirect_to "/posts/#{post.id}"
   end
+
+	def destroy
+		post_id = params[:id]
+		post = Post.find(post_id)
+		post.destroy
+		redirect_to "/posts"
+
+	end
 
 
 

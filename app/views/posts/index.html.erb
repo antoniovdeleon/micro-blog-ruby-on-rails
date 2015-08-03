@@ -9,6 +9,8 @@
        <div class="well">
 		    Name: <%= post.subject %> <br>
 		    Message: <%= post.text %> <br>
+		    <%= link_to "Edit Post", edit_post_path(post), class: "btn btn-primary" %>
+				<%= link_to "Delete",  post, method: :delete, class: "btn btn-danger"  %>
 			 </div>
 			</div>
 		<% end %>
