@@ -5,47 +5,7 @@
 			<br>
 		</div>
 	</div>
-	<form class="form-horizontal" role="form" method="post" action="/posts/<%= @post.id %>">
-		  <%= token_tag form_authenticity_token %>
-		  <input type="hidden" name="_method" value="put">
-	    <div class="form-group">
-	        <label for="post[subject]" class="col-sm-2 control-label">Subject</label>
-	        <div class="col-sm-8">
-	            <input type="text" class="form-control" name="post[subject]" placeholder="First & Last Name" value="<%= @post.subject %>">
-	        </div>
-	    </div>
-	    <div class="form-group">
-	        <label for="post[text]" class="col-sm-2 control-label">Text</label>
-	        <div class="col-sm-8">
-	            <textarea class="form-control" rows="4" name="post[text]"><%= @post.text %></textarea>
-	        </div>
-	    </div>
-	    <div class="form-group">
-	        <div class="col-sm-10 col-sm-offset-2">
-	            <input type="submit" value="Update Post" class="btn btn-primary">
-	        </div>
-	    </div>
-	</form>
 </div>
-
-<!-- bootstrap ruby style  -->
-<div class="container">
- <%= form_for @post, :html => {:class => "form-horizontal center"} do |f| %>
-	<div class="form-group">
-		<%= f.label :subject, "Subject:", class: "col-sm-2 control-label" %>
-		<div class="col-sm-8">
-	    <%= f.text_field :subject, class: "form-control" %>
-	  </div>
-	</div>
-	<div class="form-group">
-	  <%= f.label :text, "Blog Post:", class: "col-sm-2 control-label" %>
-	  <div class="col-sm-8">
-	    <%= f.text_area :text, class: "form-control" %>
-	  </div>
-	</div>
-			<%= f.submit "Submit Post", class: "btn btn-default btn-primary" %>  
- 		<% end %>
-	</div>
-</div>
+<%= render 'form' %>
 
 

@@ -1,0 +1,11 @@
+body {
+  text-decoration: none !important;
+  color: black;
+  &:hover {
+    color:darkgrey;
+  }
+}
+
+#container_form {
+	background-color: white;
+}
